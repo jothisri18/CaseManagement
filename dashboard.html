@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Case Management System</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Case Management System</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="cases.html"><i class="fas fa-briefcase"></i> Cases</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="overview">
+                <h2>Overview</h2>
+                <form id="overview-form">
+                    <label for="total-cases">Total Cases:</label>
+                    <input type="number" id="total-cases" name="total-cases" min="0" value="0"><br>
+                    <label for="open-cases">Open Cases:</label>
+                    <input type="number" id="open-cases" name="open-cases" min="0" value="0"><br>
+                    <label for="closed-cases">Closed Cases:</label>
+                    <input type="number" id="closed-cases" name="closed-cases" min="0" value="0"><br>
+                    <label for="cases-due-today">Cases Due Today:</label>
+                    <input type="number" id="cases-due-today" name="cases-due-today" min="0" value="0"><br>
+                    <button type="button" onclick="updateOverview()">Update Overview</button>
+                </form>
+                <div id="overview-display">
+                    <div class="card">Total Cases: <span id="total-cases-display">0</span></div>
+                    <div class="card">Open Cases: <span id="open-cases-display">0</span></div>
+                    <div class="card">Closed Cases: <span id="closed-cases-display">0</span></div>
+                    <div class="card">Cases Due Today: <span id="cases-due-today-display">0</span></div>
+                </div>
+            </section>
+            <section id="statistics">
+                <h2>Case Statistics</h2>
+                <canvas id="case-status-chart"></canvas>
+                <canvas id="case-trends-chart"></canvas>
+                <canvas id="case-type-chart"></canvas>
+            </section>
+            <section id="tasks">
+                <h2>Tasks</h2>
+                <ul id="task-list">
+                    <li>Task 1: Due Today</li>
+                    <li>Task 2: Due Tomorrow</li>
+                    <li>Task 3: Pending</li>
+                </ul>
+            </section>
+            <section id="recent-activities">
+                <h2>Recent Activities</h2>
+                <ul id="activity-list">
+                    <li>Case #123 updated by John Doe</li>
+                    <li>New case #124 created</li>
+                    <li>Case #122 closed</li>
+                </ul>
+            </section>
+            <section id="quick-actions">
+                <h2>Quick Actions</h2>
+                <button>Create New Case</button>
+                <button>Import Cases</button>
+                <button>Export Cases</button>
+            </section>
+        </main>
+    </div>
+    <footer>
+        &copy; 2024 Case Management System
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
